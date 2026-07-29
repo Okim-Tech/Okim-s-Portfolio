@@ -1,4 +1,5 @@
 import "./Projects.css";
+import { FaArrowRight } from "react-icons/fa";
 import taskflowImg from "../../assets/images/taskflow.jpg";
 
 const projects = [
@@ -61,6 +62,11 @@ const Projects = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="more-projects">
+        <button className="more-projects-btn">
+          View More Projects <FaArrowRight />
+        </button>
       </div>
     </section>
   );

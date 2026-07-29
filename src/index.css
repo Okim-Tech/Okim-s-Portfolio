@@ -13,18 +13,3 @@ body {
   background: #070b1d;
   color: white;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
