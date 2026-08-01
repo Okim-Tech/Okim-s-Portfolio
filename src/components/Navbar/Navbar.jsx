@@ -37,7 +37,9 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <button className="hire-btn">Hire Me</button>
+        <a href="#contact" className="hire-btn">
+          Hire Me
+        </a>
       </div>
     </header>
   );

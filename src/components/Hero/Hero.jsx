@@ -1,4 +1,5 @@
 import "./Hero.css";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import profileImg from "../../assets/images/profile.jpg";
 
 const Hero = () => {
@@ -7,25 +8,55 @@ const Hero = () => {
       <div className="hero-container">
         {/* Left Side */}
         <div className="hero-content">
-          <span className="hero-tag">
-            Full Stack Software Developer Specializing in the MERN Stack
-          </span>
+          <h2 className="hero-title">
+            Hi, I'm <br />
+            <span>Okim Peace</span>
+          </h2>
 
-          <h1>
-            Hi, I'm <span>Okim Peace</span>
-          </h1>
+          <h2 className="hero-subtitle">Full Stack Software Developer</h2>
 
-          <p>
-            I build responsive, modern and scalable web applications using
-            React, Node.js, JavaScript and MongoDB. I love solving real-world
-            problems through clean, efficient code.
+          <p className="hero-description">
+            I build modern, responsive and scalable web applications using
+            React, Node.js, Express and MongoDB. I enjoy building practical
+            solutions that help businesses and individuals achieve their goals
+            through modern web technologies.
           </p>
 
           <div className="hero-buttons">
-            <button className="btn-primary">View Projects</button>
+            <a a href="#projects" className="btn-primary">
+              View Projects
+            </a>
 
-            <button className="btn-secondary">Download CV</button>
+            <a href="/peace-okim-cv.pdf" className="btn-secondary">
+              Download CV
+            </a>
           </div>
+        </div>
+
+        <div className="hero-socials">
+          <a
+            href="https://github.com/Okim-Tech"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGithub />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/okim-peace-b930a1408"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaLinkedin />
+          </a>
+
+          <a
+            href="mailto:okimpeace187@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaEnvelope />
+          </a>
         </div>
 
         {/* Right Side */}
