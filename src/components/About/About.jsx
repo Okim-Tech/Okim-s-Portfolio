@@ -1,4 +1,5 @@
 import "./About.css";
+import { motion } from "framer-motion";
 import profileImg from "../../assets/images/profile.jpg";
 
 const About = () => {
@@ -7,7 +8,13 @@ const About = () => {
       {/* "About Me" tag moved outside the content container */}
       <span className="section-tag">About Me</span>
 
-      <div className="about-container">
+      <motion.div
+        className="about-container"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="about-image">
           <img src={profileImg} alt="Peace Okim" />
         </div>
@@ -49,7 +56,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

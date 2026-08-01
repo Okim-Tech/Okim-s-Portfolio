@@ -1,4 +1,5 @@
 import "./Skills.css";
+import { motion } from "framer-motion";
 
 const skills = [
   "HTML5",
@@ -16,19 +17,39 @@ const skills = [
 const Skills = () => {
   return (
     <section className="skills" id="skills">
-      <div className="skills-container">
+      <motion.div
+        className="skills-container"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <span className="section-tag">My Skills</span>
 
         <h2>Technologies I Work With</h2>
 
         <div className="skills-grid">
           {skills.map((skill, index) => (
-            <div className="skill-card" key={index}>
+            <motion.div
+              className="skill-card"
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.15,
+              }}
+              whileHover={{
+                y: -8,
+                scale: 1.05,
+              }}
+            >
               {skill}
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

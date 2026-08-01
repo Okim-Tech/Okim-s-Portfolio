@@ -1,4 +1,5 @@
 import "./Services.css";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -31,7 +32,13 @@ const services = [
 const Services = () => {
   return (
     <section className="services" id="services">
-      <div className="services-container">
+      <motion.div
+        className="services-container"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <span className="section-tag">Services</span>
 
         <h2>What I Can Do For You</h2>
@@ -44,7 +51,7 @@ const Services = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

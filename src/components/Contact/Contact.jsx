@@ -1,9 +1,16 @@
 import "./Contact.css";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
     <section className="contact" id="contact">
-      <div className="contact-container">
+      <motion.div
+        className="contact-container"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <span className="section-tag">Contact Me</span>
 
         <h2>Let's Build Something Amazing Together</h2>
@@ -41,7 +48,7 @@ const Contact = () => {
             <button type="submit">Send Message</button>
           </form>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
