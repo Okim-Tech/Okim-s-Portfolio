@@ -1,7 +1,56 @@
 import "./Contact.css";
 import { motion } from "framer-motion";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const [formData, setFormData] = useState({
+    from_name: "",
+    from_email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setStatus("");
+
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+
+      setStatus("success");
+
+      setFormData({
+        from_name: "",
+        from_email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="contact" id="contact">
       <motion.div
@@ -38,15 +87,53 @@ const Contact = () => {
             </div>
           </div>
 
-          <form className="contact-form">
-            <input type="text" placeholder="Your Name" />
+          <div>
+            {status === "success" && (
+              <div className="success-message">
+                ✅ Thank you! Your message has been sent successfully. I'll get
+                back to you as soon as possible.
+              </div>
+            )}
 
-            <input type="email" placeholder="Your Email" />
+            {status === "error" && (
+              <div className="error-message">
+                ❌ Something went wrong. Please try again.
+              </div>
+            )}
 
-            <textarea placeholder="Your Message" rows="6"></textarea>
+            <form ref={form} onSubmit={sendEmail} className="contact-form">
+              <input
+                type="text"
+                name="from_name"
+                placeholder="Your Name"
+                value={formData.from_name}
+                onChange={handleChange}
+                required
+              />
 
-            <button type="submit">Send Message</button>
-          </form>
+              <input
+                type="email"
+                name="from_email"
+                placeholder="Your Email"
+                value={formData.from_email}
+                onChange={handleChange}
+                required
+              />
+
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows="6"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
+
+              <button type="submit" disabled={loading}>
+                {loading ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          </div>
         </div>
       </motion.div>
     </section>

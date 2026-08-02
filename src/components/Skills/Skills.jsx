@@ -1,17 +1,78 @@
 import "./Skills.css";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
+
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+} from "react-icons/fa";
+
+import { SiJavascript, SiExpress, SiMongodb, SiVite } from "react-icons/si";
 
 const skills = [
-  "HTML5",
-  "CSS3",
-  "JavaScript",
-  "React",
-  "Node.js",
-  "Express.js",
-  "MongoDB",
-  "Git",
-  "GitHub",
-  "REST API",
+  {
+    name: "HTML5",
+    icon: <FaHtml5 />,
+    color: "#e34f26",
+    description: "Structure of modern websites",
+  },
+  {
+    name: "CSS3",
+    icon: <FaCss3Alt />,
+    color: "#1572b6",
+    description: "Responsive and beautiful designs",
+  },
+  {
+    name: "JavaScript",
+    icon: <SiJavascript />,
+    color: "#f7df1e",
+    description: "Interactive web applications",
+  },
+  {
+    name: "React",
+    icon: <FaReact />,
+    color: "#61dafb",
+    description: "Frontend user interfaces",
+  },
+  {
+    name: "Node.js",
+    icon: <FaNodeJs />,
+    color: "#339933",
+    description: "Backend development",
+  },
+  {
+    name: "Express.js",
+    icon: <SiExpress />,
+    color: "#ffffff",
+    description: "REST API development",
+  },
+  {
+    name: "MongoDB",
+    icon: <SiMongodb />,
+    color: "#47a248",
+    description: "NoSQL database",
+  },
+  {
+    name: "Git",
+    icon: <FaGitAlt />,
+    color: "#f05032",
+    description: "Version control",
+  },
+  {
+    name: "GitHub",
+    icon: <FaGithub />,
+    color: "#ffffff",
+    description: "Code collaboration",
+  },
+  {
+    name: "Vite",
+    icon: <SiVite />,
+    color: "#646cff",
+    description: "Fast React development",
+  },
 ];
 
 const Skills = () => {
@@ -38,14 +99,20 @@ const Skills = () => {
               viewport={{ once: true }}
               transition={{
                 duration: 0.5,
-                delay: index * 0.15,
+                delay: index * 0.12,
               }}
               whileHover={{
-                y: -8,
+                y: -10,
                 scale: 1.05,
               }}
             >
-              {skill}
+              <div className="skill-icon" style={{ color: skill.color }}>
+                {skill.icon}
+              </div>
+
+              <h3>{skill.name}</h3>
+
+              <p>{skill.description}</p>
             </motion.div>
           ))}
         </div>
