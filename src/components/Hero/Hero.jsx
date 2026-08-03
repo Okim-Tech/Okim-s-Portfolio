@@ -69,7 +69,7 @@ const Hero = () => {
               <FaLinkedin />
             </a>
             <a
-              href="mailto:okimpeace187@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=okimpeace187@gmail.com"
               target="_blank"
               rel="noreferrer"
             >

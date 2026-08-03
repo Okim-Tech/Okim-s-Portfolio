@@ -101,3 +101,13 @@
   transform: translateY(-3px);
   box-shadow: 0 18px 35px rgba(59, 130, 246, 0.4);
 }
+
+/* Active Navigation Link */
+
+.nav-links a.active {
+  color: #60a5fa;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
