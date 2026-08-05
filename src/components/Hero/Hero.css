@@ -180,7 +180,6 @@
    ======================================= */
 @media (max-width: 992px) {
   .hero {
-    /* Pushes content down so the image sits below the navbar */
     padding-top: 140px;
   }
 
@@ -196,7 +195,12 @@
     justify-content: center;
   }
 
+  .hero-image {
+    margin-top: 40px;
+  }
+
   .hero-image::before {
+    margin-top: 30px;
     width: 320px;
     height: 320px;
   }
@@ -208,7 +212,11 @@
 
 @media (max-width: 576px) {
   .hero {
-    padding: 150px 5% 60px;
+    padding: 180px 5% 60px;
+  }
+
+  .hero-image {
+    margin-top: 40px;
   }
 
   .hero-title {
