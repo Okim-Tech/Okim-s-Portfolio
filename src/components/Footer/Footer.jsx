@@ -24,7 +24,8 @@ const Footer = () => {
 
           <p>
             Full Stack Software Developer passionate about building modern,
-            responsive and scalable web applications.
+            responsive web applications and scalable backend APIs. Let’s work
+            together to bring your next product to life.
           </p>
 
           <div className="social-wrapper">

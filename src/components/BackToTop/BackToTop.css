@@ -27,3 +27,13 @@
     right: 20px;
   }
 }
+@media (max-width: 576px) {
+  /* Targets the back-to-top floating button on mobile */
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    bottom: 20px;
+    right: 20px;
+  }
+}

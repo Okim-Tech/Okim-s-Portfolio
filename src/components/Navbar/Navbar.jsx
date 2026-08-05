@@ -1,9 +1,11 @@
 import "./Navbar.css";
 import logoImg from "../../assets/images/logo.jpg";
 import { useEffect, useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
@@ -23,7 +25,6 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -38,20 +39,24 @@ const Navbar = () => {
     { id: "contact", label: "Contact" },
   ];
 
+  const closeMenu = () => setMobileMenuOpen(false);
+
   return (
     <header className="navbar">
-      <div className="container">
+      <div className="container nav-container">
         <div className="logo">
           <img src={logoImg} alt="Okim logo" className="logo-img" />
         </div>
 
-        <nav>
+        {/* Desktop & Mobile Navigation Links */}
+        <nav className={`nav-menu ${mobileMenuOpen ? "open" : ""}`}>
           <ul className="nav-links">
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
                   className={activeSection === item.id ? "active" : ""}
+                  onClick={closeMenu}
                 >
                   {item.label}
                 </a>
@@ -60,9 +65,20 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <a href="#contact" className="hire-btn">
-          Hire Me
-        </a>
+        <div className="nav-actions">
+          <a href="#contact" className="hire-btn" onClick={closeMenu}>
+            Hire Me
+          </a>
+
+          {/* Hamburger Icon Toggle */}
+          <button
+            className="hamburger"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Navigation Menu"
+          >
+            {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
       </div>
     </header>
   );

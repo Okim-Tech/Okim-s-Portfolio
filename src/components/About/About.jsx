@@ -52,7 +52,16 @@ const About = () => {
 
             <div>
               <h3>Email</h3>
-              <p>okimpeace187@gmail.com</p>
+              <p>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=okimpeace187@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="email-link"
+                >
+                  okimpeace187@gmail.com
+                </a>
+              </p>
             </div>
           </div>
         </div>

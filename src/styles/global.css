@@ -1,3 +1,5 @@
+@import "./variables.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +12,11 @@ html {
 }
 
 body {
-  background: #070b1d;
-  color: white;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 a {
@@ -27,4 +32,25 @@ ul {
   width: 90%;
   max-width: 1200px;
   margin: auto;
+}
+
+/* Responsive adjustments for headings & sections */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2.2rem !important;
+  }
+
+  section {
+    padding: 70px 5% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.8rem !important;
+  }
+
+  section {
+    padding: 60px 4% !important;
+  }
 }

@@ -17,7 +17,7 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
 }
 
@@ -27,7 +27,9 @@
   padding: 35px 30px;
   text-align: left;
   transition: all 0.35s ease;
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card:hover {
@@ -36,16 +38,43 @@
   box-shadow: 0 15px 35px rgba(59, 130, 246, 0.2);
 }
 
+/* Service Icon Badge Styling */
+.service-icon {
+  width: 55px;
+  height: 55px;
+  background: rgba(59, 130, 246, 0.12);
+  color: #ffffff; /* Icon color changed to white */
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 22px;
+  transition: all 0.35s ease;
+}
+
+.service-icon svg {
+  fill: #ffffff;
+  color: #ffffff;
+}
+
+.service-card:hover .service-icon {
+  background: #3b82f6;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
 .service-card h3 {
-  color: #60a5fa;
-  margin-bottom: 18px;
+  color: #ffffff; /* Headings changed to white */
+  margin-bottom: 14px;
   font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .service-card p {
-  color: #cbd5e1;
+  color: #ffffff; /* Description text changed to white */
   line-height: 1.8;
-  font-size: 16px;
+  font-size: 15.5px;
 }
 
 @media (max-width: 768px) {
@@ -58,8 +87,13 @@
     margin-bottom: 40px;
   }
 
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
   .service-card {
     text-align: center;
+    align-items: center;
     padding: 30px 20px;
   }
 }

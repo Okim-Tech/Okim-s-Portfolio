@@ -1,6 +1,7 @@
 import "./Hero.css";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 import profileImg from "../../assets/images/profile.jpg";
 
 const Hero = () => {
@@ -20,12 +21,28 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
+          <span className="hero-greeting">Hi, I'm</span>
+
           <h1 className="hero-title">
-            Hi, I'm <br />
             <span>Okim Peace</span>
           </h1>
 
-          <h2 className="hero-subtitle">Full Stack Software Developer</h2>
+          <h2 className="hero-subtitle">
+            <Typewriter
+              options={{
+                strings: [
+                  "Full Stack Software Developer",
+                  "MERN Stack Developer",
+                  "React & Node.js Specialist",
+                  "Frontend & Backend Developer",
+                ],
+                autoStart: true,
+                loop: true,
+                deleteSpeed: 40,
+                delay: 60,
+              }}
+            />
+          </h2>
 
           <p className="hero-description">
             I build modern, responsive and scalable web applications using

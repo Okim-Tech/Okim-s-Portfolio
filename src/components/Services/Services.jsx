@@ -1,31 +1,50 @@
 import "./Services.css";
 import { motion } from "framer-motion";
+import {
+  FaBriefcase,
+  FaRocket,
+  FaChartPie,
+  FaLayerGroup,
+  FaGraduationCap,
+  FaWrench,
+} from "react-icons/fa";
 
 const services = [
   {
-    title: "Business Websites",
+    icon: <FaBriefcase />,
+    title: "Business & Portfolio Websites",
     description:
-      "Professional websites for businesses that are fast, responsive and designed to build trust with customers.",
+      "Modern, fast, and responsive websites designed to showcase your brand, build trust, and turn visitors into clients.",
   },
   {
-    title: "Portfolio Websites",
+    icon: <FaRocket />,
+    title: "Landing Pages",
     description:
-      "Modern personal portfolio websites for developers, designers, students and professionals.",
+      "High-converting, optimized landing pages tailored for product launches, marketing campaigns, and lead generation.",
   },
   {
-    title: "School & Church Websites",
+    icon: <FaChartPie />,
+    title: "Admin Dashboards & Portals",
     description:
-      "Clean, informative websites that help schools and churches connect with their communities.",
+      "Custom administrative panels, user management systems, and interactive dashboards to manage your data effortlessly.",
   },
   {
+    icon: <FaLayerGroup />,
     title: "Full Stack Web Applications",
     description:
-      "Interactive web applications with React, Node.js, Express and MongoDB.",
+      "Scalable dynamic web applications built from scratch using React, Node.js, Express, and MongoDB.",
   },
   {
-    title: "Website Maintenance",
+    icon: <FaGraduationCap />,
+    title: "School & Church Websites",
     description:
-      "Fix bugs, improve performance and keep existing websites secure and up to date.",
+      "Clean, informative portals and community platforms that help schools, churches, and organizations connect with members.",
+  },
+  {
+    icon: <FaWrench />,
+    title: "Website Maintenance & Support",
+    description:
+      "Bug fixing, performance optimization, feature updates, and security patches to keep your existing apps running smooth.",
   },
 ];
 
@@ -46,6 +65,7 @@ const Services = () => {
         <div className="services-grid">
           {services.map((service, index) => (
             <div className="service-card" key={index}>
+              <div className="service-icon">{service.icon}</div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
             </div>

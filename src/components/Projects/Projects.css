@@ -22,6 +22,7 @@
   border-radius: 20px;
   overflow: hidden;
   align-items: stretch;
+  margin-bottom: 40px;
 }
 
 .project-image {
@@ -50,6 +51,7 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .project-content h3 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -86,6 +88,9 @@
   border-radius: 8px;
   text-decoration: none;
   transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .demo-btn {
@@ -120,6 +125,9 @@
   cursor: pointer;
   transition: all 0.35s ease;
   box-shadow: 0 8px 25px rgba(79, 124, 255, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .more-projects-btn:hover {
@@ -130,8 +138,50 @@
 .more-projects-btn:active {
   transform: scale(0.96);
 }
-.more-projects-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+
+/* =======================================
+   RESPONSIVE MEDIA QUERIES
+   ======================================= */
+@media (max-width: 900px) {
+  .project-card {
+    flex-direction: column;
+  }
+
+  .project-content {
+    padding: 30px 24px;
+    text-align: center;
+  }
+
+  .tech-stack {
+    justify-content: center;
+  }
+
+  .project-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects {
+    padding: 80px 5%;
+  }
+
+  .projects h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .project-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .project-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .demo-btn,
+  .github-btn {
+    width: 100%;
+  }
 }
