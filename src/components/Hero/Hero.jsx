@@ -60,7 +60,11 @@ const Hero = () => {
             <a href="#projects" className="btn btn-primary">
               View Projects
             </a>
-            <a href="/resume.pdf" download className="btn btn-secondary">
+            <a
+              href="/Okim-Peace-CV.pdf"
+              download="Okim-Peace-CV.pdf"
+              className="btn btn-secondary"
+            >
               Download CV
             </a>
           </motion.div>
